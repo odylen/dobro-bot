@@ -20,6 +20,7 @@ env:
   GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
   GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
   GITHUB_SHA: ${{ github.sha }}
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
   GKE_ZONE: us-central1
   GKE_CLUSTER: dobrobot-cluster
   IMAGE: dobrobot
@@ -53,7 +54,7 @@ jobs:
       run: |        
         docker build -t "$REGISTRY_HOSTNAME"/"$GKE_PROJECT"/"$IMAGE":"$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
-          --build-arg BOT_TOKEN=${{ secrets.BOT_TOKEN }} \
+          --build-arg "$BOT_TOKEN" \
           --build-arg GITHUB_REF="$GITHUB_REF" .
 
     # Push the Docker image to Google Container Registry
