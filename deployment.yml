@@ -31,10 +31,3 @@ spec:
       containers:
       - name: dobrobot
         image: gcr.io/GKE_PROJECT/IMAGE:TAG
-        ports:
-        - containerPort: 5000
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            cpu: 100m
