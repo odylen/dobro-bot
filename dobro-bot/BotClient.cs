@@ -47,7 +47,6 @@ namespace dobro_bot
                     ReplyKeyboardMarkup ReplyKeyboard = new[]
                     {
                         new[] {"1.1", "1.2"},
-                        new[] {"2.1", "2.2"},
                     };
                     await Bot.SendTextMessageAsync(
                         chatId: message.Chat.Id,
