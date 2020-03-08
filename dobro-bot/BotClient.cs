@@ -46,7 +46,7 @@ namespace dobro_bot
                 case "/keyboard":
                     ReplyKeyboardMarkup ReplyKeyboard = new[]
                     {
-                        new[] {"1.fdsdmswe3", "ewr"},
+                        new[] {"1.fdsdmsadswe3", "ewr"},
                     };
                     await Bot.SendTextMessageAsync(
                         chatId: message.Chat.Id,
