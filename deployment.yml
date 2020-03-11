@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
   annotations:
     deployment.kubernetes.io/desired-replicas: "1"
@@ -9,7 +9,6 @@ metadata:
   generation: 1
   labels:
     app: dobrobot
-    pod-template-hash: 7dc6cb674d
   name: dobrobot-7dc6cb674d
   namespace: default
   ownerReferences:
@@ -27,13 +26,11 @@ spec:
   selector:
     matchLabels:
       app: dobrobot
-      pod-template-hash: 7dc6cb674d
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: dobrobot
-        pod-template-hash: 7dc6cb674d
     spec:
       containers:
       - image: gcr.io/GKE_PROJECT/IMAGE:TAG
