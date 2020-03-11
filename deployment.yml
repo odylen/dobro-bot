@@ -1,30 +1,11 @@
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
-metadata:
-  annotations:
-    deployment.kubernetes.io/desired-replicas: "1"
-    deployment.kubernetes.io/max-replicas: "2"
-  labels:
-    app: dobrobot
-    pod-template-hash: 7dc6cb674d
-  name: dobrobot-7dc6cb674d
-  namespace: default
-  ownerReferences:
-  - apiVersion: apps/v1
-    blockOwnerDeletion: true
-    controller: true
-    kind: Deployment
-    name: dobrobot
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: dobrobot
   template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: dobrobot
     spec:
       containers:
       - image: gcr.io/GKE_PROJECT/IMAGE:TAG
